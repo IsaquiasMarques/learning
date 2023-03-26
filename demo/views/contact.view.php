@@ -1,7 +1,7 @@
 <?php
-    require('partials/head.php');
-    require('partials/nav.php');
-    require('partials/banner.php'); 
+    require base_path('views/partials/head.php');
+    require base_path('views/partials/nav.php');
+    require base_path('views/partials/banner.php'); 
 ?>
 
 <main>
@@ -11,5 +11,5 @@
 </main>
 
 <?php
-    require('partials/foot.php');
+    require base_path('views/partials/foot.php');
 ?>

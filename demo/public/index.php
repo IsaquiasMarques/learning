@@ -1,5 +1,7 @@
 <?php
 
+use Core\Router;
+
 const BASE_PATH = __DIR__ . '/../';
 require(BASE_PATH . 'Core/functions.php');
 
@@ -8,11 +10,11 @@ spl_autoload_register(function($class){
     require base_path("{$class}.php");
 });
 
-require base_path('bootstrap.php');
 require base_path('app.php');
+require base_path('bootstrap.php');
 require base_path('Core/Response.php');
 
-$router = new \Core\Router();
+$router = new Router();
 $routes = require base_path('routes.php');
 
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];

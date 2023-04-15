@@ -3,8 +3,8 @@
 use Core\Authentication\Auth;
 use Core\Database;
 
-$db = app('database', Database::class);
-$auth = app('auth', Auth::class);
+$db = app( config('container.names.for_database'), Database::class );
+$auth = app( config('container.names.for_authentication'), Auth::class );
 
 $id = $_POST['id'] ?? 0;
 

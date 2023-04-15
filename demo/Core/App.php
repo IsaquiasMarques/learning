@@ -14,9 +14,9 @@ class App{
         return static::$container[$key];
     }
 
-    public static function resolve($option, $key){
+    public static function resolve($option, $class){
         // dd(static::$container);
-        return static::$container[$option]->resolve($key);
+        return static::$container[$option]->resolve($class);
     }
 
 }

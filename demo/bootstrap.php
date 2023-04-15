@@ -9,12 +9,11 @@ $config = require base_path('config/config.php');
 $bootstrapDatabase = new Bootstrap();
 $bootstrapAuth = new Bootstrap();
 
-$bootstrapDatabase->bind($config['container']['names']['for_database'], Database::class, function(){
-    $config = require base_path('config/config.php');
-    return new Database($config['database']);
+$bootstrapDatabase->bind(config('container.names.for_database'), Database::class, function(){
+    return new Database(config('database'));
 });
 
-$bootstrapAuth->bind($config['container']['names']['for_authentication'], Auth::class, function() {
+$bootstrapAuth->bind(config('container.names.for_authentication'), Auth::class, function() {
     $user = (object) [
         'id' => 1,
         'name' => 'Isaquias',
